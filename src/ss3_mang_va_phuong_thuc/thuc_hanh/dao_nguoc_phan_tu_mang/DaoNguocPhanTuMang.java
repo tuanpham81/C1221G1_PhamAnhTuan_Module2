@@ -14,8 +14,8 @@ public class DaoNguocPhanTuMang {
                 System.out.println("Size does not exceed 20");
         } while (size > 20);
         array = new int[size];
-        int i = 0;
-        for (;i < array.length;i++) {
+
+        for (int i = 0;i < array.length;i++) {
             System.out.print("Enter element " + (i + 1) + ": ");
             array[i] = scanner.nextInt();
         }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ThemPhanTuVaoMang {
     public static void main(String[] args) {
-        int[] array = {10, 4, 6, 8, 6, 0, 1};
+        int[] array = {10, 4, 6, 8, 6, 0, 0, 0 };
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập phần tử cần thêm");
         int num = scanner.nextInt();
@@ -12,10 +12,14 @@ public class ThemPhanTuVaoMang {
         do{
             System.out.println("Nhập vị trí thêm vào");
             index = scanner.nextInt();
-        } while (index > 0 || index >= array.length -1);
-        for (int i = array.length; i >= index; i++) {
-            array[i] = num;
-
+        } while (index < 0 || index >= array.length -1);
+        for (int i = array.length -1; i > index; i--) {
+            array[i] = array[i-1];
         }
+        array[index] = num;
+        for (int element: array) {
+            System.out.println(element+ " ");
+        }
+
     }
 }

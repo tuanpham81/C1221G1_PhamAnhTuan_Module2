@@ -44,6 +44,7 @@ public class HienThiCacLoaiHinh {
                                 }
                                 System.out.println("\n");
                             }
+                            break;
                         case 3:
                             for (int i = 0; i < height2; i++) {
                                 for (int j = 0; j <= i; j++) {
@@ -51,6 +52,7 @@ public class HienThiCacLoaiHinh {
                                 }
                                 System.out.println("\n");
                             }
+                            break;
                         case 2:
                             for (int i = 0; i < height2; i++) {
                                 for (int j = 0; j <= i; j++) {

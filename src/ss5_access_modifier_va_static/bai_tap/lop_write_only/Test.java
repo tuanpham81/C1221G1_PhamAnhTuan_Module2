@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        Student student = new Student();
-        System.out.println(student);
+        Student2 student2 = new Student2();
+        System.out.println(student2);
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập tên học sinh");
-        student.setName(scanner.nextLine());
+        student2.setName(scanner.nextLine());
         System.out.println("Nhập tên lớp");
-        student.setClasses(scanner.nextLine());
-        System.out.println(student);
+        student2.setClasses(scanner.nextLine());
+        System.out.println(student2);
     }
 }

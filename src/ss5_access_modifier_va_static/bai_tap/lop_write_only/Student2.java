@@ -1,10 +1,10 @@
 package ss5_access_modifier_va_static.bai_tap.lop_write_only;
 
-public class Student {
+public class Student2 {
     private String name = "John";
     private String classes = "C02";
 
-    public Student() {
+    public Student2() {
     }
 
     public void setName(String name) {

@@ -4,6 +4,7 @@ public class MoveablePointTest {
     public static void main(String[] args) {
         MoveablePoint moveablePoint = new MoveablePoint(4,5);
         moveablePoint.move();
-        System.out.println(moveablePoint.move());
+        moveablePoint.move();
+        System.out.println(moveablePoint);
     }
 }

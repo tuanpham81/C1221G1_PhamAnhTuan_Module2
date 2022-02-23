@@ -5,6 +5,6 @@ public class StudentManager {
     //sd các phương thức CRUD
     private static Student[] students = new Student[100]; //sd biến static
     static {
-        students[0] = new Student();
+        students[0] = new Student(1,"Tuan","08-01","C1221G1","DUE");
     }
 }

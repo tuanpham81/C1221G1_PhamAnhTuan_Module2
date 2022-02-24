@@ -12,7 +12,7 @@ public class Square extends Shape implements Colorable{
         this.side = side;
     }
 
-    public Square(String color, boolean filled, double side) {
+    public Square(double side, String color, boolean filled) {
         super(color, filled);
         this.side = side;
     }

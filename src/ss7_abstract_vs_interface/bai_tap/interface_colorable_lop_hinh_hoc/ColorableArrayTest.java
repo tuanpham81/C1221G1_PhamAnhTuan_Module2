@@ -4,7 +4,7 @@ import ss7_abstract_vs_interface.bai_tap.interface_resizeable_lop_hinh_hoc.Circl
 import ss7_abstract_vs_interface.bai_tap.interface_resizeable_lop_hinh_hoc.Rectangle;
 import ss7_abstract_vs_interface.bai_tap.interface_resizeable_lop_hinh_hoc.Shape;
 
-public class ColorableArray {
+public class ColorableArrayTest {
     public static void main(String[] args) {
         Circle circle1 = new Circle();
         Circle circle2 = new Circle(3.5);
@@ -18,8 +18,11 @@ public class ColorableArray {
 
         Shape[] shapes = {circle1,circle2,circle3,rectangle1,rectangle2,rectangle3,square1,square2,square3};
 
-        for (Shape element:shapes) {
-            System.out.println(element.);
+        for (Shape element: shapes) {
+            System.out.println("Diện tích là: "+ element.getArea());
+            if(element instanceof Square) {
+                element.howToColor();
+            }
         }
     }
 }

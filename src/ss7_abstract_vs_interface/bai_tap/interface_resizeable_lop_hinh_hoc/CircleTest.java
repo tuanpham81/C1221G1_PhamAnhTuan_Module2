@@ -1,6 +1,6 @@
 package ss7_abstract_vs_interface.bai_tap.interface_resizeable_lop_hinh_hoc;
 
-public class CircleTest extends RandomResizeableArray{
+public class CircleTest extends RandomResizeableArrayTest {
     public static void main(String[] args) {
         Circle circle1 = new Circle();
         System.out.println("Diện tích cũ là: " + circle1.getArea());

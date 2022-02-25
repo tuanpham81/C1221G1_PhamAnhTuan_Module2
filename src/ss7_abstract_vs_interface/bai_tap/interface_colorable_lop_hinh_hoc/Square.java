@@ -44,4 +44,9 @@ public class Square extends Shape implements Colorable{
     public void howToColor() {
         System.out.println("Color all 4 sides");
     }
+
+    @Override
+    public void resize(double percent) {
+
+    }
 }

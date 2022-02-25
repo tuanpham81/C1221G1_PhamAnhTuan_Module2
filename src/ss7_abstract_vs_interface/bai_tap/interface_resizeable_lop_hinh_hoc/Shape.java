@@ -1,6 +1,8 @@
 package ss7_abstract_vs_interface.bai_tap.interface_resizeable_lop_hinh_hoc;
 
-public class Shape {
+import ss7_abstract_vs_interface.bai_tap.interface_colorable_lop_hinh_hoc.Colorable;
+
+public abstract class Shape implements IResizeable, Colorable {
     private String color = "green";
     private boolean filled = true;
 
@@ -35,4 +37,5 @@ public class Shape {
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
+    public abstract double getArea();
 }

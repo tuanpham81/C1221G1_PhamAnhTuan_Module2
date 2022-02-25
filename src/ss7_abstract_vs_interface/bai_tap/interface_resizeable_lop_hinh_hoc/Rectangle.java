@@ -44,16 +44,18 @@ public class Rectangle extends Shape implements IResizeable{
 
     @Override
     public String toString() {
-        return "A Rectangle with width="
-                + getWidth()
-                + " and length="
-                + getLength()
-                + ", which is a subclass of "
-                + super.toString();
+        return "Rectangle{" +
+                "width=" + width +
+                ", length=" + length +
+                '}';
     }
 
     @Override
     public void resize(double percent) {
         this.width += this.width * percent;
+    }
+
+    @Override
+    public void howToColor() {
     }
 }

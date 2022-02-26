@@ -19,7 +19,7 @@ public class ColorableArrayTest {
         Shape[] shapes = {circle1,circle2,circle3,rectangle1,rectangle2,rectangle3,square1,square2,square3};
 
         for (Shape element: shapes) {
-            System.out.println("Diện tích là: "+ element.getArea());
+            System.out.println("Diện tích là: " + element.getArea());
             if(element instanceof Square) {
                 element.howToColor();
             }

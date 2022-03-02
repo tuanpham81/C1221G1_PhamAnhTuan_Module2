@@ -43,7 +43,7 @@ public class ArrayListTest {
         studentArrayList.add(d);
 
         for (int i = 0; i < studentArrayList.size(); i++) {
-            Student student = (Student) studentArrayList.elements[i];
+//            Student student = studentArrayList
         }
     }
 }

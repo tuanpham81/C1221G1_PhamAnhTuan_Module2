@@ -17,14 +17,15 @@ public class ProductManagerTest {
 
         Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.println("Menu\n" +
+            System.out.print("MENU\n" +
                     "1. Thêm sản phẩm\n" +
                     "2. Chỉnh sửa sản phẩm\n" +
                     "3. Xóa sản phẩm\n" +
                     "4. Hiển thị sản phẩm\n" +
                     "5. Tìm kiếm sản phẩm\n" +
                     "6. Sắp xếp sản phẩm\n" +
-                    "7. Exit");
+                    "7. Exit\n" +
+                    "Nhập lựa chọn: ");
             int choice = input.nextInt();
             switch (choice) {
                 case 1:

@@ -58,10 +58,16 @@ public class ProductManager {
     public static void searchByName() {
         System.out.println("Nhâp tên sản phẩm cần tìm");
         String nameSearch = scanner.nextLine();
+        boolean flag = false;
         for (Product product : productList) {
             if (nameSearch.equals(product.getName())) {
                 System.out.println(product.toString());
+                flag = true;
+                break;
             }
+        }
+        if (flag == false) {
+            System.out.println("Không tìm thấy sản phẩm");
         }
     }
 
@@ -71,12 +77,14 @@ public class ProductManager {
             return o1.getName().compareTo(o2.getName());
         }
     }
+
     public static class SortByAmount implements Comparator<Product> {
         @Override
         public int compare(Product o1, Product o2) {
             return o1.getAmount() - o2.getAmount();
         }
     }
+
     public static class SortByPrice implements Comparator<Product> {
         @Override
         public int compare(Product o1, Product o2) {

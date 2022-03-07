@@ -1,5 +1,7 @@
 package collection_review.services.impl;
 
+import bai_tap_lam_them.quan_ly_phuong_tien.services.impl.HangSanXuatService;
+import collection_review.models.CandidateType;
 import collection_review.models.ExperienceCandidate;
 import collection_review.services.Service;
 import ss10_DSA_Danh_sach.bai_tap.trien_khai_phuong_thuc_array_list.ArrayList;
@@ -34,13 +36,15 @@ public class ExperienceCandidateService implements Service {
         System.out.println("Nhập email");
         String email = scanner.nextLine();
         System.out.println("Nhập loại ứng viên");
-        String type = scanner.nextLine();
-        System.out.println("Nhập số năm kinh nghiệm");
-        byte expInYear = scanner.nextByte();
-        System.out.println("Nhập kỹ năng");
-        String proSkill = scanner.nextLine();
-        ExperienceCandidate experienceCandidate = new ExperienceCandidate(id, firstName, lastName, birthDay, address, phone, email, type, expInYear, proSkill );
-        experienceCandidateList.add(experienceCandidate);
+//        CandidateType.hienThi();
+//        int choose = scanner.nextInt();
+//        String type = CandidateService.candidateList.get(choose-1);
+//        System.out.println("Nhập số năm kinh nghiệm");
+//        byte expInYear = scanner.nextByte();
+//        System.out.println("Nhập kỹ năng");
+//        String proSkill = scanner.nextLine();
+//        ExperienceCandidate experienceCandidate = new ExperienceCandidate(id, firstName, lastName, birthDay, address, phone, email, type, expInYear, proSkill );
+//        experienceCandidateList.add(experienceCandidate);
     }
 
     @Override

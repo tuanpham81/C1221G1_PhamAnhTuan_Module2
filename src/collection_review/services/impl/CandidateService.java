@@ -15,7 +15,7 @@ public class CandidateService implements Service {
     @Override
     public void hienThi() {
         for (int i = 0; i < candidateList.size() ; i++) {
-            System.out.println(candidateList.get(i));
+            System.out.println(i+1 +". "+ candidateList.get(i));
         }
     }
 }

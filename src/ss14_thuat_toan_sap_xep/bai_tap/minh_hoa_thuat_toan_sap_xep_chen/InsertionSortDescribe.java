@@ -2,7 +2,7 @@ package ss14_thuat_toan_sap_xep.bai_tap.minh_hoa_thuat_toan_sap_xep_chen;
 
 import java.util.Scanner;
 
-public class InsertionSort_MinhHoa {
+public class InsertionSortDescribe {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter list size:");

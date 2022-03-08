@@ -20,7 +20,7 @@ public class CandidateService implements Service {
     public void findByName(String candidateName){
         ArrayList<Candidate> searchList = new ArrayList<Candidate>();
         for (int i = 0; i < candidateList.size(); i++) {
-            if(Candidate.getLastName.)
+//            if(Candidate.getLastName.)
         }
     }
 }

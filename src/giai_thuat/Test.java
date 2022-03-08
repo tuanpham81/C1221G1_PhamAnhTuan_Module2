@@ -1,43 +1,29 @@
 package giai_thuat;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Test {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter list size:");
-        int size = Integer.parseInt(scanner.nextLine());
-        int[] list = new int[size];
-        for (int i = 0; i < list.length; i++) {
-            System.out.print("Enter values " + (i + 1) + " :");
-            list[i] = Integer.parseInt(scanner.nextLine());
-        }
-        System.out.print("Your input list: " + Arrays.toString(list));
+     public static String solution(String arg1) {
+        String[] ch = arg1.split("");
+        ArrayList<String> chList = new ArrayList<String>(Arrays.asList(ch));
 
-        System.out.println("\nBegin sort processing...");
-        System.out.println();
-        insertionSortStepByStep(list);
+        chList.get(0).toLowerCase();
+        for (int i = 1; i < chList.size(); i++) {
+            if (chList.get(i).toLowerCase().equals(chList.get(i).toLowerCase())) {
+                chList.add(i - 1, " ");
+            }
+        }
+        String[] arr = new String[chList.size()];
+        chList.toArray(arr);
+        String arrOutput = arr.toString();
+        return arrOutput;
     }
 
-    public static void insertionSortStepByStep(int[] list) {
-        int pos;
-        int currentElement;
-        for (int i = 1; i < list.length; i++) {
-            currentElement = list[i];
-            System.out.println("Take " + currentElement + " out of list.");
-            pos = i;
-            while (pos > 0 && currentElement < list[pos - 1]) {
-                System.out.println("Move " + list[pos - 1] + " to backward");
-                list[pos] = list[pos - 1];
-                pos--;
-            }
-            System.out.println("Replace " + currentElement + " to " + list[pos]);
-            list[pos] = currentElement;
-
-            System.out.println("List after the  " + i + "' sort: " + Arrays.toString(list));
-        }
+    public static void main(String[] args) {
+        String str = "CodeGym";
+        Test.solution(str);
     }
 }
 

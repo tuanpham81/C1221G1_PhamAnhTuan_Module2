@@ -1,6 +1,5 @@
 package collection_review.models;
 
-import com.sun.beans.editors.ByteEditor;
 
 public class ExperienceCandidate extends Candidate{
     private byte expInYear;
@@ -14,7 +13,7 @@ public class ExperienceCandidate extends Candidate{
         this.proSkill = proSkill;
     }
 
-    public ExperienceCandidate(int id, String firstName, String lastName, int birthDay, String address, String phone, String email, String type, byte expInYear, String proSkill) {
+    public ExperienceCandidate(int id, String firstName, String lastName, int birthDay, String address, String phone, String email, int type, byte expInYear, String proSkill) {
         super(id, firstName, lastName, birthDay, address, phone, email, type);
         this.expInYear = expInYear;
         this.proSkill = proSkill;

@@ -32,15 +32,13 @@ public class FresherCandidateService implements Service {
 
         System.out.println("Nhập email");
         String email = scanner.nextLine();
-        System.out.println("Nhập loại ứng viên");
-        String type = scanner.nextLine();
         System.out.println("Nhập thời gian tốt nghiệp");
         String graduation_date = scanner.nextLine();
         System.out.println("Nhập loại tốt nghiệp");
         String graduation_rank = scanner.nextLine();
         System.out.println("Nhập trường đại học");
         String university = scanner.nextLine();
-        FresherCandidate fresherCandidate = new FresherCandidate(id, firstName, lastName,  birthDay, address, phone, email, type, graduation_date, graduation_rank, university);
+        FresherCandidate fresherCandidate = new FresherCandidate(id, firstName, lastName,  birthDay, address, phone, email, 1, graduation_date, graduation_rank, university);
         fresherCandidateList.add(fresherCandidate);
     }
 

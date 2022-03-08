@@ -32,15 +32,13 @@ public class InternCandidateService implements Service {
 
         System.out.println("Nhập email");
         String email = scanner.nextLine();
-        System.out.println("Nhập loại ứng viên");
-        String type = scanner.nextLine();
         System.out.println("Nhập chuyên ngành");
         String major = scanner.nextLine();
         System.out.println("Nhập học kỳ");
         byte semester = scanner.nextByte();
         System.out.println("Nhập trường đại học");
         String university = scanner.nextLine();
-        InternCandidate internCandidate = new InternCandidate(id, firstName, lastName, birthDay, address, phone, email, type, major, semester, university );
+        InternCandidate internCandidate = new InternCandidate(id, firstName, lastName, birthDay, address, phone, email, 2, major, semester, university );
         internCandidateList.add(internCandidate);
     }
 

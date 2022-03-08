@@ -1,6 +1,5 @@
 package collection_review.models;
 
-import java.util.Scanner;
 
 public abstract class Candidate {
     private int id;
@@ -10,12 +9,12 @@ public abstract class Candidate {
     private String address;
     private String phone;
     private String email;
-    private String type;
+    private int type;
 
     public Candidate() {
     }
 
-    public Candidate(int id, String firstName, String lastName, int birthDay, String address, String phone, String email, String type) {
+    public Candidate(int id, String firstName, String lastName, int birthDay, String address, String phone, String email, int type) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -82,11 +81,11 @@ public abstract class Candidate {
         this.email = email;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 

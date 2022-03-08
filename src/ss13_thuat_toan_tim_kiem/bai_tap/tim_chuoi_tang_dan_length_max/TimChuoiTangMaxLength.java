@@ -13,12 +13,12 @@ public class TimChuoiTangMaxLength {
         LinkedList<Character> max = new LinkedList<>();
 
         // Tìm chuỗi tăng dần có độ dài lớn nhất
-        for (int i = 0; i < string.length(); i++) { //Vòng lặp bên ngoài
+        for (int i = 0; i < string.length(); i++) {
             //Khai báo một linked list trung gian các kí tự của chuỗi tăng dần
             LinkedList<Character> list = new LinkedList<>();
             //thêm kí tự thứ i vào trong list
             list.add(string.charAt(i));
-            for (int j = i + 1; j < string.length(); j++) { //vòng lặp bên trong
+            for (int j = i + 1; j < string.length(); j++) {
                 //Kiểm tra kí tự tiếp theo có lớn hơn kí tự cuối cùng trong list hay không
                 if (string.charAt(j) > list.getLast()) {
                     //Nếu có thì thêm vào trong list
@@ -35,8 +35,8 @@ public class TimChuoiTangMaxLength {
         }
 
         // Hiển thị chuỗi tăng dần dài nhất
-        for (Character ch: max) { // 1 vòng lặp
-            System.out.print(ch); // 1 câu lệnh
+        for (Character ch: max) {
+            System.out.print(ch);
         }
         System.out.println();
     }

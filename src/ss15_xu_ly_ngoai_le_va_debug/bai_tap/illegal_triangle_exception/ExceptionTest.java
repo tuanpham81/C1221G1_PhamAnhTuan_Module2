@@ -13,12 +13,12 @@ public class ExceptionTest {
         float z = scanner.nextFloat();
         try {
             checkTriangleSides(x, y, z);
-        }catch (IllegalArgumentException e){
+        }catch (IllegalTriangleException e){
             e.printStackTrace();
         }
     }
-    public static void checkTriangleSides(float x, float y, float z) throws IllegalArgumentException{
-        if(x <= 0 || y <= 0 || z <= 0) throw new IllegalArgumentException("Cạnh nhỏ hơn 0");
-        if(x + y < z || x + z < y || y + z < x) throw new IllegalArgumentException("Tam giác ko tồn tại");
+    public static void checkTriangleSides(float x, float y, float z) throws IllegalTriangleException{
+        if(x <= 0 || y <= 0 || z <= 0) throw new IllegalTriangleException("Cạnh không được nhỏ hơn 0");
+        if(x + y < z || x + z < y || y + z < x) throw new IllegalTriangleException("Tam giác ko tồn tại");
     }
 }

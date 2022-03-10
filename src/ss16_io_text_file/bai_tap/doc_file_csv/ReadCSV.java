@@ -18,7 +18,7 @@ public class ReadCSV {
             bufferedReader = new BufferedReader(fileReader);
             String line = null;
             String[] arr = null;
-            while ((line = bufferedReader.readLine()) != null) {
+            while ((line = bufferedReader.readLine()) != null) { //readline tự nhảy xuống dòng?
                 arr = line.split(",");
                 Country country = new Country(Integer.parseInt(arr[0]), arr[1], arr[2]);
                 countryList.add(country);

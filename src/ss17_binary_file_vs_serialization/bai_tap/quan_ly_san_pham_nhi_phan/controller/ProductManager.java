@@ -1,4 +1,6 @@
-package ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan;
+package ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.controller;
+
+import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.services.ProductServiceImpl;
 
 import java.util.Scanner;
 
@@ -17,7 +19,7 @@ public class ProductManager {
                     "5.	Chỉnh sửa sản phẩm\n" +
                     "6.	Thoát\n" +
                     "Nhập lựa chọn: ");
-            int choice = scanner.nextInt();
+            int choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
                     productService.add();
@@ -29,6 +31,18 @@ public class ProductManager {
                     System.out.println("Nhập tên sản phẩm muốn tìm:");
                     String searchString = scanner.nextLine();
                     productService.search(searchString);
+                case 4:
+                    System.out.println("Nhập id sản phẩm muốn xóa:");
+                    int deleteId = Integer.parseInt(scanner.nextLine());
+                    productService.delete(deleteId);
+                    productService.display();
+                case 5:
+                    System.out.println("Nhập id sản phẩm muốn sửa");
+                    int editId = Integer.parseInt(scanner.nextLine());
+                    productService.edit(editId);
+                    productService.display();
+                case 6:
+                    System.exit(6);
             }
         }
     }

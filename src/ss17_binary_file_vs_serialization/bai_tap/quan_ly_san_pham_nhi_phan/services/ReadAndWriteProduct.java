@@ -1,6 +1,6 @@
-package ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan;
+package ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.services;
 
-import ss17_binary_file_vs_serialization.thuc_hanh.doc_va_ghi_danh_sach_ra_nhi_phan.doc_va_ghi_danh_sach_ra_nhi_phan.Student;
+import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.models.Product;
 
 import java.io.*;
 import java.util.ArrayList;

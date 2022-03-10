@@ -1,4 +1,4 @@
-package ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan;
+package ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.models;
 
 import java.io.Serializable;
 

@@ -13,7 +13,7 @@ public class ExperienceCandidateService implements Service {
     @Override
     public void themMoi(){
         System.out.println("Nhập ID");
-        int id = scanner.nextInt();
+        int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập họ");
         String firstName = scanner.nextLine();
         System.out.println("Nhập tên");
@@ -21,7 +21,7 @@ public class ExperienceCandidateService implements Service {
         int  birthDay;
         do {
             System.out.println("Nhập ngày Sinh");
-            birthDay = scanner.nextInt();
+            birthDay = Integer.parseInt(scanner.nextLine());
         } while (birthDay < 1900 || birthDay > 2020 );
         System.out.println("Nhập địa chỉ");
         String address = scanner.nextLine();

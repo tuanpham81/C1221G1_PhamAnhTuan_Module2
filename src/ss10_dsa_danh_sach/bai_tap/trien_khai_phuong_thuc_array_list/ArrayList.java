@@ -1,4 +1,4 @@
-package ss10_DSA_Danh_sach.bai_tap.trien_khai_phuong_thuc_array_list;
+package ss10_dsa_danh_sach.bai_tap.trien_khai_phuong_thuc_array_list;
 
 import java.util.Arrays;
 

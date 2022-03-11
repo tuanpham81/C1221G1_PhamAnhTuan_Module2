@@ -2,10 +2,12 @@ package collection_review.services.impl;
 
 import collection_review.models.Candidate;
 import collection_review.services.Service;
-import ss10_DSA_Danh_sach.bai_tap.trien_khai_phuong_thuc_array_list.ArrayList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CandidateService implements Service {
-    static ArrayList<Candidate> candidateList = new ArrayList<Candidate>();
+    static List<Candidate> candidateList = new ArrayList<>();
 
     @Override
     public void themMoi() {
@@ -13,14 +15,24 @@ public class CandidateService implements Service {
 
     @Override
     public void hienThi() {
-        for (int i = 0; i < candidateList.size() ; i++) {
-            System.out.println(i+1 +". "+ candidateList.get(i));
+        for (int i = 0; i < candidateList.size(); i++) {
+            System.out.println(i + 1 + ". " + candidateList.get(i));
         }
     }
-    public void findByName(String candidateName){
-        ArrayList<Candidate> searchList = new ArrayList<Candidate>();
-        for (int i = 0; i < candidateList.size(); i++) {
-//            if(Candidate.getLastName.)
+
+    public void findByLastName(String candidateName) {
+        List<Candidate> searchList = new ArrayList<>();
+        for (Candidate element : candidateList) {
+            if (element.getLastName().contains(candidateName)) {
+                searchList.add(element);
+            }
+        }
+        if (searchList.size() > 0) {
+            for (Candidate element : searchList) {
+                System.out.println(element);
+            }
+        } else {
+            System.out.println("Không tìm thấy ứng viên");
         }
     }
 }

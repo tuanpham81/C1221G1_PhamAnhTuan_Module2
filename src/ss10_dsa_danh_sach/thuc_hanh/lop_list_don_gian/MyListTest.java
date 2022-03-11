@@ -1,4 +1,4 @@
-package ss10_DSA_Danh_sach.thuc_hanh.lop_list_don_gian;
+package ss10_dsa_danh_sach.thuc_hanh.lop_list_don_gian;
 
 public class MyListTest {
     public static void main(String[] args) {

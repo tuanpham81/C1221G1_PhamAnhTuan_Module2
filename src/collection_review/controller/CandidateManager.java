@@ -19,9 +19,9 @@ public class CandidateManager {
                     "CANDIDATE MANAGEMENT SYSTEM \n" +
                             "1.	Experience\n" +
                             "2.	Fresher\n" +
-                            "2.	Internship\n" +
-                            "3.	Searching\n" +
-                            "4.	Thoát\n");
+                            "3.	Internship\n" +
+                            "4.	Searching\n" +
+                            "5.	Thoát\n");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -58,7 +58,11 @@ public class CandidateManager {
                     }
                     break;
                 case 4:
-
+                    System.out.println("Nhập tên ứng viên:");
+                    String searchName = scanner.nextLine();
+                    candidate.findByLastName(searchName);
+                case 5:
+                    System.exit(5);
             }
         }
     }

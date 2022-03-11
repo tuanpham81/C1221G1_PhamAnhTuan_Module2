@@ -2,7 +2,7 @@ package collection_review.services.impl;
 
 import collection_review.models.InternCandidate;
 import collection_review.services.Service;
-import ss10_DSA_Danh_sach.bai_tap.trien_khai_phuong_thuc_array_list.ArrayList;
+import ss10_dsa_danh_sach.bai_tap.trien_khai_phuong_thuc_array_list.ArrayList;
 import java.util.Scanner;
 
 public class InternCandidateService implements Service {

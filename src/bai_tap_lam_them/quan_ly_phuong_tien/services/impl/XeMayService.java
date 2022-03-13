@@ -6,14 +6,15 @@ import bai_tap_lam_them.quan_ly_phuong_tien.services.ReadAndWriteXeMay;
 import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.models.Product;
 import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.services.ReadAndWriteProduct;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class XeMayService implements IService {
+public class XeMayService implements IService{
     Scanner scanner = new Scanner(System.in);
     static ArrayList<XeMay> danhSachXeMay = new ArrayList<XeMay>();
-    static final String BIKE_FILE_DAT = "src\\bai_tap_lam_them\\quan_ly_phuong_tien\\services\\impl\\XeMayService.java";
+    static final String BIKE_FILE_DAT = "src\\bai_tap_lam_them\\quan_ly_phuong_tien\\data\\xe_may.csv";
 
     @Override
     public void themMoi() {
@@ -36,7 +37,6 @@ public class XeMayService implements IService {
         String congSuat = scanner.nextLine();
         XeMay xeMay = new XeMay(bienSo, tenHangXe, namSanXuat, chuSoHuu, congSuat);
         danhSachXeMay.add(xeMay);
-        PhuongTienService.danhSachPhuongTien.add(xeMay);
         ReadAndWriteXeMay.writeToFile(BIKE_FILE_DAT, danhSachXeMay);
     }
 

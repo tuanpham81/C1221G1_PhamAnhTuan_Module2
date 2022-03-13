@@ -1,6 +1,8 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.models;
 
-public class XeMay extends PhuongTien{
+import java.io.Serializable;
+
+public class XeMay extends PhuongTien implements Serializable {
     private String congSuat;
 
     public XeMay() {

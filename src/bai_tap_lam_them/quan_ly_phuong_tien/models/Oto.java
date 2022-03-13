@@ -1,6 +1,8 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.models;
 
-public class Oto extends PhuongTien{
+import java.io.Serializable;
+
+public class Oto extends PhuongTien implements Serializable {
     private int soGhe;
     protected String kieuXe;
 

@@ -1,8 +1,9 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.models;
 
-import java.util.Scanner;
+import java.awt.*;
+import java.io.Serializable;
 
-public class PhuongTien {
+public class PhuongTien implements Serializable {
     public String bienSo;
     public String hangXe;
     public int namSanXuat;

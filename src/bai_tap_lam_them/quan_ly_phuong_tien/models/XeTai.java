@@ -1,7 +1,9 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.models;
 
 
-public class XeTai extends PhuongTien{
+import java.io.Serializable;
+
+public class XeTai extends PhuongTien implements Serializable {
     private int trongTai;
 
     public XeTai() {

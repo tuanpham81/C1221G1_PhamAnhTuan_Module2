@@ -8,14 +8,15 @@ import bai_tap_lam_them.quan_ly_phuong_tien.services.ReadAndWriteXeTai;
 import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.models.Product;
 import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.services.ReadAndWriteProduct;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class OtoService implements IService {
+public class OtoService implements IService{
     Scanner scanner = new Scanner(System.in);
     static ArrayList<Oto> danhSachOto = new ArrayList<Oto>();
-    static final String CARS_FILE_DAT = "src\\bai_tap_lam_them\\quan_ly_phuong_tien\\services\\impl\\OtoService.java";
+    static final String CARS_FILE_DAT = "src\\bai_tap_lam_them\\quan_ly_phuong_tien\\data\\oto.csv";
 
     @Override
     public void themMoi() {
@@ -40,7 +41,6 @@ public class OtoService implements IService {
         String loaiXe = scanner.nextLine();
         Oto oto = new Oto(bienSo, tenHangXe, namSanXuat, chuSoHuu, soGhe, loaiXe);
         danhSachOto.add(oto);
-        PhuongTienService.danhSachPhuongTien.add(oto);
         ReadAndWriteOto.writeToFile(CARS_FILE_DAT,danhSachOto);
     }
 

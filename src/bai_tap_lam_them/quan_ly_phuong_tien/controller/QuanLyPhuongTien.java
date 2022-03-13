@@ -12,7 +12,6 @@ public class QuanLyPhuongTien {
     static XeTaiService xeTai = new XeTaiService();
     static OtoService oto = new OtoService();
     static XeMayService xeMay = new XeMayService();
-    static PhuongTienService phuongTien = new PhuongTienService();
 
     public static void displayMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -50,8 +49,7 @@ public class QuanLyPhuongTien {
                     System.out.println("1. Hiển thị xe tải\n" +
                             "2. Hiển thị ôtô\n" +
                             "3. Hiển thị xe máy\n" +
-                            "4. Hiển thị tất cả\n" +
-                            "5. Quay lại\n");
+                            "4. Quay lại\n");
                     int luaChonHienThi = Integer.parseInt(scanner.nextLine());
                     switch (luaChonHienThi) {
                         case 1:
@@ -64,8 +62,6 @@ public class QuanLyPhuongTien {
                             xeMay.hienThi();
                             break;
                         case 4:
-                            phuongTien.hienThi();
-                        case 5:
                             displayMenu();
                             break;
                     }
@@ -73,7 +69,11 @@ public class QuanLyPhuongTien {
                 case 3:
                     System.out.println("Nhập biển số xe muốn xóa: ");
                     String bienSoXe = scanner.nextLine();
-                    PhuongTienService.xoa(bienSoXe);
+                    try {
+                        PhuongTienService.xoa(bienSoXe);
+                    } catch (Exception e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 4:
                     System.exit(4);

@@ -1,9 +1,6 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.models;
 
-import java.util.Scanner;
-
 public class Oto extends PhuongTien{
-    Scanner scanner = new Scanner(System.in);
     private int soGhe;
     protected String kieuXe;
 
@@ -39,9 +36,14 @@ public class Oto extends PhuongTien{
 
     @Override
     public String toString() {
-        return "Oto{" +
-                "soGhe=" + soGhe +
-                ", kieuXe='" + kieuXe + '\'' +
-                '}';
+        return "Biển số: " + getBienSo() + ", " +
+                "Hãng: " + getHangXe() + ", " +
+                "Năm sx: " + getNamSanXuat() + ", " +
+                "Chủ sở hữu: " + getChuSoHuu() + ", " +
+                "Số ghế: " + getSoGhe() + ", " +
+                "Kiểu xe: " + getKieuXe() + "\n";
+    }
+    public String getInfoToCSV(){
+        return this.bienSo+","+this.hangXe +","+ this.namSanXuat + "," + this.chuSoHuu +","+ this.soGhe + "," + this.kieuXe;
     }
 }

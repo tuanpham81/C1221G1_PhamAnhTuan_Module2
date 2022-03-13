@@ -3,11 +3,10 @@ package bai_tap_lam_them.quan_ly_phuong_tien.models;
 import java.util.Scanner;
 
 public class PhuongTien {
-    Scanner scanner = new Scanner(System.in);
-    private String bienSo;
-    private String hangXe;
-    private int namSanXuat;
-    private String chuSoHuu;
+    public String bienSo;
+    public String hangXe;
+    public int namSanXuat;
+    public String chuSoHuu;
 
     public PhuongTien() {
     }
@@ -59,16 +58,5 @@ public class PhuongTien {
                 ", namSanXuat=" + namSanXuat +
                 ", chuSoHuu='" + chuSoHuu + '\'' +
                 '}';
-    }
-    public void themMoi(){
-        System.out.println("Nhập biển KS");
-        String bienSo = scanner.nextLine();
-        System.out.println("Nhập hãng xe");
-
-        String hangXe = scanner.nextLine();
-        System.out.println("Nhập năm sản xuất");
-        int namSanXuat = scanner.nextInt();
-        System.out.println("Nhập tên chủ sở hữu");
-        String chuSoHuu = scanner.nextLine();
     }
 }

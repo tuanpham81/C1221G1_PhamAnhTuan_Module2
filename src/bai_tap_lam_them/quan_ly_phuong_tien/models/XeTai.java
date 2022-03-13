@@ -1,9 +1,7 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.models;
 
-import java.util.Scanner;
 
 public class XeTai extends PhuongTien{
-    Scanner scanner = new Scanner(System.in);
     private int trongTai;
 
     public XeTai() {
@@ -18,10 +16,24 @@ public class XeTai extends PhuongTien{
         this.trongTai = trongTai;
     }
 
+    public int getTrongTai() {
+        return trongTai;
+    }
+
+    public void setTrongTai(int trongTai) {
+        this.trongTai = trongTai;
+    }
+
     @Override
     public String toString() {
-        return "Xetai{" +
-                "trongTai=" + trongTai +
-                '}';
+        return "Biển số: " + getBienSo() + ", " +
+                "Hãng: " + getHangXe() + ", " +
+                "Năm sx: " + getNamSanXuat() + ", " +
+                "Chủ sở hữu: " + getChuSoHuu() + ", " +
+                "Trọng tải: " + getTrongTai() + "\n";
+    }
+
+    public String getInfoToCSV(){
+        return this.bienSo+","+this.hangXe +","+ this.namSanXuat + "," + this.chuSoHuu +","+ this.trongTai;
     }
 }

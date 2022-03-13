@@ -14,6 +14,7 @@ public class PhoneNumber {
         } else {
             System.out.println("SĐT không hợp lệ");
         }
+            
     }
 
     public static void main(String[] args) {

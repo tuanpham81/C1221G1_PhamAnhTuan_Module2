@@ -1,9 +1,6 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.models;
 
-import java.util.Scanner;
-
 public class XeMay extends PhuongTien{
-    Scanner scanner = new Scanner(System.in);
     private String congSuat;
 
     public XeMay() {
@@ -28,8 +25,14 @@ public class XeMay extends PhuongTien{
 
     @Override
     public String toString() {
-        return "XeMay{" +
-                "congSuat='" + congSuat + '\'' +
-                '}';
+        return "Biển số: " + getBienSo() + ", " +
+                "Hãng: " + getHangXe() + ", " +
+                "Năm sx: " + getNamSanXuat() + ", " +
+                "Chủ sở hữu: " + getChuSoHuu() + ", " +
+                "Công suất: " + getCongSuat() + "\n";
+    }
+
+    public String getInfoToCSV(){
+        return this.bienSo+","+this.hangXe +","+ this.namSanXuat + "," + this.chuSoHuu +","+ this.congSuat;
     }
 }

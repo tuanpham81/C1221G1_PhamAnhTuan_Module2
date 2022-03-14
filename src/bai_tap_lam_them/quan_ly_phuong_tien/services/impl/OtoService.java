@@ -1,22 +1,17 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.services.impl;
 
-import bai_tap_lam_them.quan_ly_phuong_tien.controller.QuanLyPhuongTien;
 import bai_tap_lam_them.quan_ly_phuong_tien.models.Oto;
 import bai_tap_lam_them.quan_ly_phuong_tien.services.IService;
-import bai_tap_lam_them.quan_ly_phuong_tien.services.ReadAndWriteOto;
-import bai_tap_lam_them.quan_ly_phuong_tien.services.ReadAndWriteXeTai;
-import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.models.Product;
-import ss17_binary_file_vs_serialization.bai_tap.quan_ly_san_pham_nhi_phan.services.ReadAndWriteProduct;
+import bai_tap_lam_them.quan_ly_phuong_tien.utils.ReadAndWriteOto;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class OtoService implements IService{
+public class OtoService implements IService {
     Scanner scanner = new Scanner(System.in);
-    static ArrayList<Oto> danhSachOto = new ArrayList<Oto>();
-    static final String CARS_FILE_DAT = "src\\bai_tap_lam_them\\quan_ly_phuong_tien\\data\\oto.csv";
+    static List<Oto> danhSachOto = new ArrayList<>();
+    static final String CARS_FILE_DAT = "src\\bai_tap_lam_them\\quan_ly_phuong_tien\\data\\oto.txt";
 
     @Override
     public void themMoi() {
@@ -26,11 +21,11 @@ public class OtoService implements IService{
             System.out.println("Nhập biển KS");
             bienSo = scanner.nextLine();
             isValid = bienSo.matches("^\\d{2}[A|B]-\\d{3}\\.\\d{2}$");
-        } while ( !isValid );
+        } while (!isValid);
         System.out.println("Nhập hãng xe");
         HangSanXuatService.hienThi();
-        String hangXe = scanner.nextLine();
-        String tenHangXe = HangSanXuatService.getHangSanXuat(hangXe).getTenHang();
+        int soHangXe = Integer.parseInt(scanner.nextLine());
+        String tenHangXe = HangSanXuatService.hangSanXuats.get(soHangXe - 1).getTenHang();
         System.out.println("Nhập năm sản xuất");
         int namSanXuat = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập tên chủ sở hữu:");
@@ -41,14 +36,18 @@ public class OtoService implements IService{
         String loaiXe = scanner.nextLine();
         Oto oto = new Oto(bienSo, tenHangXe, namSanXuat, chuSoHuu, soGhe, loaiXe);
         danhSachOto.add(oto);
-        ReadAndWriteOto.writeToFile(CARS_FILE_DAT,danhSachOto);
+        ReadAndWriteOto.writeToFile(CARS_FILE_DAT, danhSachOto, false);
     }
 
     @Override
     public void hienThi() {
-        List<Oto> vehicleDataFromFile = ReadAndWriteOto.readDataFromFile(CARS_FILE_DAT);
-        for (Oto oto : vehicleDataFromFile) {
-            System.out.println(oto);
-        }
+            List<Oto> vehicleDataFromFile = ReadAndWriteOto.readDataFromFile(CARS_FILE_DAT);
+            if (vehicleDataFromFile.size()>0) {
+            for (Oto oto : vehicleDataFromFile) {
+                System.out.println(oto);
+            }
+        } else {
+                System.out.println("Danh sách rỗng");
+            }
     }
 }

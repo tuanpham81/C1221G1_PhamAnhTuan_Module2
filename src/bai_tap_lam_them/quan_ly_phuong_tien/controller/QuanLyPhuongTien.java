@@ -1,9 +1,10 @@
 package bai_tap_lam_them.quan_ly_phuong_tien.controller;
 
 import bai_tap_lam_them.quan_ly_phuong_tien.services.impl.OtoService;
-import bai_tap_lam_them.quan_ly_phuong_tien.services.impl.PhuongTienService;
 import bai_tap_lam_them.quan_ly_phuong_tien.services.impl.XeMayService;
 import bai_tap_lam_them.quan_ly_phuong_tien.services.impl.XeTaiService;
+import bai_tap_lam_them.quan_ly_phuong_tien.services.impl.PhuongTienService;
+import bai_tap_lam_them.quan_ly_phuong_tien.utils.NotFoundVehicleException;
 
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class QuanLyPhuongTien {
     static OtoService oto = new OtoService();
     static XeMayService xeMay = new XeMayService();
 
-    public static void displayMenu() {
+    public static void displayMenu() throws NotFoundVehicleException {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("---QUẢN LÝ PHƯƠNG TIỆN---\n" +
@@ -70,7 +71,7 @@ public class QuanLyPhuongTien {
                     System.out.println("Nhập biển số xe muốn xóa: ");
                     String bienSoXe = scanner.nextLine();
                     try {
-                        PhuongTienService.xoa(bienSoXe);
+                     PhuongTienService.xoa(bienSoXe);
                     } catch (Exception e){
                         System.out.println(e.getMessage());
                     }

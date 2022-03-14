@@ -1,4 +1,4 @@
-package bai_tap_lam_them.quan_ly_phuong_tien.services;
+package bai_tap_lam_them.quan_ly_phuong_tien.utils;
 
 import bai_tap_lam_them.quan_ly_phuong_tien.models.XeTai;
 
@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteXeTai {
-    public static void writeToFile(String path, List<XeTai> xeTaiList) {
+    public static void writeToFile(String path, List<XeTai> xeTaiList, boolean append) {
         try {
-            FileOutputStream fos = new FileOutputStream(path);
+            FileOutputStream fos = new FileOutputStream(path, append);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(xeTaiList);
             oos.close();

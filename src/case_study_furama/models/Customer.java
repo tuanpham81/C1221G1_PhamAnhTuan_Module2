@@ -2,16 +2,16 @@ package case_study_furama.models;
 
 public class Customer extends Person {
     private String customerId;
-    private String customnerType;
+    private String customerType;
     private String address;
 
     public Customer() {
     }
 
-    public Customer(String name, String birthday, boolean gender, String idNumber, String phoneNumber, String email, String customerId, String customnerType, String address) {
+    public Customer(String name, String birthday, String gender, int idNumber, String phoneNumber, String email, String customerId, String customerType, String address) {
         super(name, birthday, gender, idNumber, phoneNumber, email);
         this.customerId = customerId;
-        this.customnerType = customnerType;
+        this.customerType = customerType;
         this.address = address;
     }
 
@@ -23,12 +23,12 @@ public class Customer extends Person {
         this.customerId = customerId;
     }
 
-    public String getCustomnerType() {
-        return customnerType;
+    public String getCustomerType() {
+        return customerType;
     }
 
-    public void setCustomnerType(String customnerType) {
-        this.customnerType = customnerType;
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType;
     }
 
     public String getAddress() {
@@ -43,8 +43,13 @@ public class Customer extends Person {
     public String toString() {
         return "Customer{" +
                 "customerId='" + customerId + '\'' +
-                ", customnerType='" + customnerType + '\'' +
+                ", customnerType='" + customerType + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    public String getInfoToCSV(){
+        return this.name+","+this.birthDay+","+this.gender+","+this.idNumber+","+this.phoneNumber
+                +","+this.email+","+this.customerId+","+this.customerType+","+this.address;
     }
 }

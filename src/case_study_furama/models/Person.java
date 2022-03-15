@@ -1,19 +1,19 @@
 package case_study_furama.models;
 
 public abstract class Person {
-    private String name;
-    private String birthday;
-    private boolean gender;
-    private String idNumber;
-    private String phoneNumber;
-    private String email;
+    public String name;
+    public String birthDay;
+    public String gender;
+    public int idNumber;
+    public String phoneNumber;
+    public String email;
 
     public Person() {
     }
 
-    public Person(String name, String birthday, boolean gender, String idNumber, String phoneNumber, String email) {
+    public Person(String name, String birthday, String gender, int idNumber, String phoneNumber, String email) {
         this.name = name;
-        this.birthday = birthday;
+        this.birthDay = birthday;
         this.gender = gender;
         this.idNumber = idNumber;
         this.phoneNumber = phoneNumber;
@@ -28,27 +28,27 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getBirthDay() {
+        return birthDay;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public String getIdNumber() {
+    public int getIdNumber() {
         return idNumber;
     }
 
-    public void setIdNumber(String idNumber) {
+    public void setIdNumber(int idNumber) {
         this.idNumber = idNumber;
     }
 
@@ -72,7 +72,7 @@ public abstract class Person {
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", birthday='" + birthday + '\'' +
+                ", birthday='" + birthDay + '\'' +
                 ", gender=" + gender +
                 ", idNumber='" + idNumber + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +

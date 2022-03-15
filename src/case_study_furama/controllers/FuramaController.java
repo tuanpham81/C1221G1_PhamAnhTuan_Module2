@@ -1,4 +1,4 @@
-package case_study_furama.controller;
+package case_study_furama.controllers;
 
 import java.util.Scanner;
 
@@ -101,6 +101,8 @@ public class FuramaController {
                     }
                 case 6:
                     System.exit(6);
+                default:
+                    System.out.println("Choose a number");
             }
         }
     }

@@ -1,20 +1,20 @@
 package case_study_furama.models;
 
-public class Villa extends Falcility{
+public class Villa extends Facility {
         private String standard;
-        private double  poolArea;
+        private float  poolArea;
         private int floorNum;
 
     public Villa() {
     }
 
-    public Villa(String standard, double poolArea, int floorNum) {
+    public Villa(String standard, float poolArea, int floorNum) {
         this.standard = standard;
         this.poolArea = poolArea;
         this.floorNum = floorNum;
     }
 
-    public Villa(String serviceName, double area, double price, int maxCapacity, String rentType, String standard, double poolArea, int floorNum) {
+    public Villa(String serviceName, float area, float price, int maxCapacity, String rentType, String standard, float poolArea, int floorNum) {
         super(serviceName, area, price, maxCapacity, rentType);
         this.standard = standard;
         this.poolArea = poolArea;
@@ -29,11 +29,11 @@ public class Villa extends Falcility{
         this.standard = standard;
     }
 
-    public double getPoolArea() {
+    public float getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(double poolArea) {
+    public void setPoolArea(float poolArea) {
         this.poolArea = poolArea;
     }
 
@@ -53,4 +53,9 @@ public class Villa extends Falcility{
                 ", floorNum=" + floorNum +
                 '}';
     }
+    public String getInfoToCSV(){
+        return serviceName+","+area+","+price+","+maxCapacity+","+rentType
+                +","+standard+","+poolArea+","+floorNum;
+    }
+
 }

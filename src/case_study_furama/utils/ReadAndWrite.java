@@ -1,16 +1,16 @@
 package case_study_furama.utils;
 
-import case_study_furama.models.Customer;
-import case_study_furama.models.Employee;
-import case_study_furama.models.Person;
+import case_study_furama.models.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class ReadAndWritePerson {
+public class ReadAndWrite {
     static final String EMPLOYEE_DATA = "src\\case_study_furama\\data\\employee.csv";
     static final String CUSTOMER_DATA = "src\\case_study_furama\\data\\customer.csv";
+    static final String VILLA_DATA = "src\\case_study_furama\\data\\villa.csv";
 
     private static void writeStringListToCSV(List<String> stringList, String pathFile, Boolean append) {
         File file = new File(pathFile);
@@ -29,7 +29,7 @@ public class ReadAndWritePerson {
             e.printStackTrace();
         }
     }
-
+    // ghi ds nhân viên vào file
     public static void writeEmployeeListToCSV(List<Employee> employeeList, Boolean append) {
         List<String> stringList = new ArrayList<>();
         for (Employee i : employeeList) {
@@ -37,7 +37,7 @@ public class ReadAndWritePerson {
         }
         writeStringListToCSV(stringList, EMPLOYEE_DATA, append);
     }
-
+    // ghi ds khách hàng vào file
     public static void writeCustomerListToCSV(List<Customer> customerList, Boolean append) {
         List<String> stringList = new ArrayList<>();
         for (Customer i : customerList) {
@@ -45,6 +45,14 @@ public class ReadAndWritePerson {
         }
         writeStringListToCSV(stringList, CUSTOMER_DATA, append);
     }
+//    //ghi ds villa vào file
+//    public static void writeVillaListToCSV(HashMap<Facility, int numOfUse> villaList , Boolean append) {
+//        List<String> stringList = new ArrayList<>();
+//        for (Villa i : villaList) {
+//            stringList.add(i.getInfoToCSV());
+//        }
+//        writeStringListToCSV(stringList, VILLA_DATA, append);
+//    }
 
     public static List<Employee> readEmployeeFromCSV() {
         List<Employee> employeeList = new ArrayList<>();
@@ -74,6 +82,7 @@ public class ReadAndWritePerson {
         File file = new File(EMPLOYEE_DATA);
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
+
         try {
             fileReader = new FileReader(file);
             bufferedReader = new BufferedReader(fileReader);

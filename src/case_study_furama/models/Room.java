@@ -1,6 +1,6 @@
 package case_study_furama.models;
 
-public class Room extends Falcility {
+public class Room extends Facility {
     private String freeService;
 
     public Room() {
@@ -10,7 +10,7 @@ public class Room extends Falcility {
         this.freeService = freeService;
     }
 
-    public Room(String serviceName, double area, double price, int maxCapacity, String rentType, String freeService) {
+    public Room(String serviceName, float area, float price, int maxCapacity, String rentType, String freeService) {
         super(serviceName, area, price, maxCapacity, rentType);
         this.freeService = freeService;
     }

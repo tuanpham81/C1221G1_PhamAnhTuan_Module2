@@ -1,0 +1,6 @@
+CustomerService:
+- Customer phải booking để sử dụng các dịch vụ thuê Villa, House, Room
+- Đối với các dịch vụ thuê Villa và House thì Customer cần phải làm hợp đồng thuê với Furama
+Facility:
+- Mỗi một dịch vụ khi sử dụng liên tục 5 lần sẽ được đội kỹ thuật kiểm tra bảo dưỡng
+- Hashmap lưu dạng k-v, vậy muốn hiển thị thông tin đầy đủ của phần tử phải làm sao?

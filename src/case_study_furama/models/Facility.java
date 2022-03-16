@@ -1,21 +1,23 @@
 package case_study_furama.models;
 
-public abstract class Falcility {
-    private String serviceName;
-    private double area;
-    private double price;
-    private int maxCapacity;
-    private String rentType;
+public abstract class Facility {
+    public String serviceName;
+    public float area;
+    public float price;
+    public int maxCapacity;
+    public String rentType;
+//    public int numOfUse;
 
-    public Falcility() {
+    public Facility() {
     }
 
-    public Falcility(String serviceName, double area, double price, int maxCapacity, String rentType) {
+    public Facility(String serviceName, float area, float price, int maxCapacity, String rentType) {
         this.serviceName = serviceName;
         this.area = area;
         this.price = price;
         this.maxCapacity = maxCapacity;
         this.rentType = rentType;
+//        this.numOfUse = numOfUse;
     }
 
     public String getServiceName() {
@@ -26,19 +28,19 @@ public abstract class Falcility {
         this.serviceName = serviceName;
     }
 
-    public double getArea() {
+    public float getArea() {
         return area;
     }
 
-    public void setArea(double area) {
+    public void setArea(float area) {
         this.area = area;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -58,14 +60,23 @@ public abstract class Falcility {
         this.rentType = rentType;
     }
 
+//    public int getNumOfUse() {
+//        return numOfUse;
+//    }
+//
+//    public void setNumOfUse(int numOfUse) {
+//        this.numOfUse = numOfUse;
+//    }
+
     @Override
     public String toString() {
-        return "Falcility{" +
+        return "Facility{" +
                 "serviceName='" + serviceName + '\'' +
                 ", area=" + area +
                 ", price=" + price +
                 ", maxCapacity=" + maxCapacity +
                 ", rentType='" + rentType + '\'' +
+//                ", numOfUse=" + numOfUse +
                 '}';
     }
 }

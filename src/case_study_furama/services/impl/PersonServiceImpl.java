@@ -38,5 +38,10 @@ public class PersonServiceImpl implements PersonService {
     public void edit() {
 
     }
+
+    @Override
+    public void delete() {
+
+    }
 }
 

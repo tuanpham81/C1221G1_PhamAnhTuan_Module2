@@ -1,10 +1,7 @@
 package case_study_furama.controllers;
 
 import case_study_furama.services.VillaService;
-import case_study_furama.services.impl.CustomerServiceImpl;
-import case_study_furama.services.impl.EmployeeServiceImpl;
-import case_study_furama.services.impl.FacilityServiceImpl;
-import case_study_furama.services.impl.VillaServiceImpl;
+import case_study_furama.services.impl.*;
 
 import java.util.Scanner;
 
@@ -13,17 +10,21 @@ public class FuramaController {
     static CustomerServiceImpl customerService = new CustomerServiceImpl();
     static FacilityServiceImpl facilityService = new FacilityServiceImpl();
     static VillaServiceImpl villaService = new VillaServiceImpl();
+    static HouseServiceImpl houseService = new HouseServiceImpl();
+    static RoomServiceImpl roomService = new RoomServiceImpl();
 
     public void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("MENU\n" +
+            System.out.print("  -------MENU-------\n" +
                     "1.	Employee Management\n" +
                     "2.	Customer Management\n" +
                     "3.	Facility Management\n" +
                     "4.	Booking Management\n" +
                     "5.	Promotion Management\n" +
-                    "6.	Exit\n");
+                    "6.	Exit\n" +
+                    "  -------------------\n"+
+                    "Choose a number: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -46,6 +47,7 @@ public class FuramaController {
                             displayMainMenu();
                             break;
                     }
+                    break;
                 case 2:
                     System.out.println("1	Display list customers\n" +
                             "2	Add new customer\n" +
@@ -66,6 +68,7 @@ public class FuramaController {
                             displayMainMenu();
                             break;
                     }
+                    break;
                 case 3:
                     System.out.println("1	Display list facility\n" +
                             "2	Add new facility\n" +
@@ -77,28 +80,35 @@ public class FuramaController {
                             System.out.println("Villa list:");
                             villaService.display();
                             System.out.println("House list:");
-//                            villaService.display();
+                            houseService.display();
                             System.out.println("Room list:");
-//                            villaService.display();
+                            roomService.display();
                             break;
                         case 2:
-                            System.out.println("1.Add New Villa\n" +
-                                    "2.Add New House\n" +
-                                    "3.Add New Room\n" +
+                            System.out.println("1.Add new Villa\n" +
+                                    "2.Add new House\n" +
+                                    "3.Add new Room\n" +
                                     "4.Back to menu\n");
                             int addFacilityChoice =  Integer.parseInt(scanner.nextLine());
                             switch (addFacilityChoice) {
                                 case 1:
                                     villaService.addNew();
                                     break;
+                                case 2:
+                                    houseService.addNew();
+                                    break;
+                                case 3:
+                                    roomService.addNew();
+                                    break;
                             }
                         case 3:
-                            facilityService.edit();
+
                             break;
                         case 4:
                             displayMainMenu();
                             break;
                     }
+                    break;
                 case 4:
                     System.out.println("1	Add new booking\n" +
                             "2	Display list booking\n" +
@@ -118,6 +128,7 @@ public class FuramaController {
                             displayMainMenu();
                             break;
                     }
+                    break;
                 case 5:
                     System.out.println("1	Display list customers use service\n" +
                             "2	Display list customers get voucher\n" +
@@ -132,6 +143,7 @@ public class FuramaController {
                             displayMainMenu();
                             break;
                     }
+                    break;
                 case 6:
                     System.exit(6);
                 default:

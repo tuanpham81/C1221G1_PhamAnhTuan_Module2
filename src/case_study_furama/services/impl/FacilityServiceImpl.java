@@ -2,8 +2,6 @@ package case_study_furama.services.impl;
 
 import case_study_furama.services.FacilityService;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class FacilityServiceImpl implements FacilityService {
@@ -15,10 +13,6 @@ public class FacilityServiceImpl implements FacilityService {
 //    public int numOfUse;
 
     static Scanner scanner = new Scanner(System.in);
-
-    HashMap<String, Integer> houseList = new LinkedHashMap<>();
-    HashMap<String, Integer> roomList = new LinkedHashMap<>();
-
 
     @Override
     public void addNew() {

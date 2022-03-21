@@ -13,7 +13,7 @@ public class EmployeeServiceImpl extends PersonServiceImpl implements EmployeeSe
     static List<Employee> employeeList = new ArrayList<>();
 
     static String[] positionList = {"lễ tân", "phục vụ", "chuyên viên", "giám sát", "quản lý", "giám đốc"};
-    static String[] degreeList = {"trung cấp", "cao đẳng"," đại học", "sau đại học"};
+    static String[] degreeList = {"trung cấp", "cao đẳng","đại học", "sau đại học"};
 
     static {
         Employee employee1 = new Employee("A", "1996", "Nam", 111, "0123456789", "abc", "1", "cao dang", "nhan vien", 10000);
@@ -89,12 +89,10 @@ public class EmployeeServiceImpl extends PersonServiceImpl implements EmployeeSe
                 employeeList.get(choose - 1).setEmployeeId(employeeId);
             case 8:
                 System.out.println("Enter new degree");
-                String degree = scanner.nextLine();
-                employeeList.get(choose - 1).setEmployeeId(degree);
+                String degree = selectDegree();
             case 9:
                 System.out.println("Enter new position");
-                String position = scanner.nextLine();
-                employeeList.get(choose - 1).setPosition(position);
+                String position = selectPosition();
             case 10:
                 System.out.println("Enter new salary");
                 String salary = scanner.nextLine();

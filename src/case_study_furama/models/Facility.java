@@ -1,12 +1,13 @@
 package case_study_furama.models;
 
-public abstract class Facility {
+import java.io.Serializable;
+
+public abstract class Facility implements Serializable {
     public String serviceName;
     public float area;
     public float price;
     public int maxCapacity;
     public String rentType;
-//    public int numOfUse;
 
     public Facility() {
     }
@@ -17,7 +18,6 @@ public abstract class Facility {
         this.price = price;
         this.maxCapacity = maxCapacity;
         this.rentType = rentType;
-//        this.numOfUse = numOfUse;
     }
 
     public String getServiceName() {
@@ -60,14 +60,6 @@ public abstract class Facility {
         this.rentType = rentType;
     }
 
-//    public int getNumOfUse() {
-//        return numOfUse;
-//    }
-//
-//    public void setNumOfUse(int numOfUse) {
-//        this.numOfUse = numOfUse;
-//    }
-
     @Override
     public String toString() {
         return "Facility{" +
@@ -76,7 +68,6 @@ public abstract class Facility {
                 ", price=" + price +
                 ", maxCapacity=" + maxCapacity +
                 ", rentType='" + rentType + '\'' +
-//                ", numOfUse=" + numOfUse +
                 '}';
     }
 }

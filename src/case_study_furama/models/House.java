@@ -37,8 +37,18 @@ public class House extends Facility {
     @Override
     public String toString() {
         return "House{" +
-                "standard='" + standard + '\'' +
+                "serviceName='" + serviceName + '\'' +
+                ", area=" + area +
+                ", price=" + price +
+                ", maxCapacity=" + maxCapacity +
+                ", rentType='" + rentType + '\'' +
+                ", standard=" + standard  +
                 ", floorNum=" + floorNum +
                 '}';
+    }
+
+    public String getInfoToCSV(){
+        return serviceName+","+area+","+price+","+maxCapacity+","+rentType
+                +","+standard+","+floorNum;
     }
 }

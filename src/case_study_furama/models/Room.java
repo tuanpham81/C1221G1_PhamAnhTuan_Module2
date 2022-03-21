@@ -26,7 +26,17 @@ public class Room extends Facility {
     @Override
     public String toString() {
         return "Room{" +
+                "serviceName='" + serviceName + '\'' +
+                ", area=" + area +
+                ", price=" + price +
+                ", maxCapacity=" + maxCapacity +
+                ", rentType='" + rentType + '\'' +
                 "freeService='" + freeService + '\'' +
                 '}';
+    }
+
+    public String getInfoToCSV(){
+        return serviceName+","+area+","+price+","+maxCapacity+","+rentType
+                +","+freeService;
     }
 }

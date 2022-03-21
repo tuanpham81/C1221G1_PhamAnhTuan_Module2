@@ -77,12 +77,7 @@ public class FuramaController {
                     int facilityChoice =  Integer.parseInt(scanner.nextLine());
                     switch (facilityChoice){
                         case 1:
-                            System.out.println("Villa list:");
-                            villaService.display();
-                            System.out.println("House list:");
-                            houseService.display();
-                            System.out.println("Room list:");
-                            roomService.display();
+                            facilityService.display();
                             break;
                         case 2:
                             System.out.println("1.Add new Villa\n" +

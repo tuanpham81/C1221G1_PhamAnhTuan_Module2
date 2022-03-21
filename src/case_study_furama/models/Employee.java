@@ -52,7 +52,13 @@ public class Employee extends Person{
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeId=" + employeeId +
+                "name='" + name + '\'' +
+                ", birthday='" + birthDay + '\'' +
+                ", gender=" + gender +
+                ", idNumber='" + idNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", employeeId=" + employeeId +
                 ", degree='" + degree + '\'' +
                 ", position='" + position + '\'' +
                 ", salary='" + salary + '\'' +

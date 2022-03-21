@@ -1,6 +1,9 @@
 package case_study_furama.models;
 
-public class Villa extends Facility {
+
+import java.io.Serializable;
+
+public class Villa extends Facility implements Serializable {
         private String standard;
         private float  poolArea;
         private int floorNum;
@@ -48,6 +51,11 @@ public class Villa extends Facility {
     @Override
     public String toString() {
         return "Villa{" +
+                "serviceName='" + serviceName + '\'' +
+                ", area=" + area +
+                ", price=" + price +
+                ", maxCapacity=" + maxCapacity +
+                ", rentType='" + rentType + '\'' +
                 "standard='" + standard + '\'' +
                 ", poolArea=" + poolArea +
                 ", floorNum=" + floorNum +

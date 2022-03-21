@@ -87,8 +87,7 @@ public class CustomerServiceImpl extends PersonServiceImpl implements CustomerSe
                 customerList.get(choose - 1).setCustomerId(customerId);
             case 8:
                 System.out.println("Enter customer type");
-                String type = scanner.nextLine();
-                customerList.get(choose - 1).setCustomerType(type);
+                String type = selectCustomerType();
             case 9:
                 System.out.println("Enter new address");
                 String address = scanner.nextLine();

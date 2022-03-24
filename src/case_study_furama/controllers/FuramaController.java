@@ -15,6 +15,7 @@ public class FuramaController {
 
     public void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
+        int choice = 0;
         while (true) {
             System.out.print("  -------MENU-------\n" +
                     "1.	Employee Management\n" +
@@ -25,7 +26,11 @@ public class FuramaController {
                     "6.	Exit\n" +
                     "  -------------------\n"+
                     "Choose a number: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e){
+                System.out.println("Vui lòng nhập số");
+            }
             switch (choice) {
                 case 1:
                     System.out.println("1   Display list employees\n" +

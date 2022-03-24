@@ -12,7 +12,7 @@ public class ReadAndWrite {
     static final String VILLA_DATA = "src\\case_study_furama\\data\\villa.csv";
     static final String ROOM_DATA = "src\\case_study_furama\\data\\room.csv";
     static final String HOUSE_DATA = "src\\case_study_furama\\data\\house.csv";
-    static final String FACILITY_DATA = "src\\case_study_furama\\data\\facility.csv";
+    static final String FACILITY_DATA = "src\\case_study_furama\\data\\facility.txt";
 
     private static void writeStringListToCSV(List<String> stringList, String pathFile, Boolean append) {
         // thêm nếu ko có file thì tự tạo
@@ -51,10 +51,10 @@ public class ReadAndWrite {
         writeStringListToCSV(stringList, CUSTOMER_DATA, append);
     }
 
-    //ghi ds facility vào file
-    public static void writeToFile() {
+    //ghi ds facility vào file kiểu đối tượng
+    public static void writeFacilityToFile(boolean append) {
         try {
-            FileOutputStream fos = new FileOutputStream(FACILITY_DATA);
+            FileOutputStream fos = new FileOutputStream(FACILITY_DATA, append);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(FacilityServiceImpl.facilityIntegerMap);
             oos.close();
@@ -65,7 +65,7 @@ public class ReadAndWrite {
     }
 
     // đọc ds facility từ file
-    public static LinkedHashMap<Facility, Integer> readDataFromFile() {
+    public static LinkedHashMap<Facility, Integer> readFacilityFromFile() {
         LinkedHashMap<Facility, Integer> facilityIntegerLinkedHashMap = new LinkedHashMap<>();
         try {
             FileInputStream fis = new FileInputStream(FACILITY_DATA);
@@ -153,5 +153,77 @@ public class ReadAndWrite {
             e.printStackTrace();
         }
         return customerList;
+    }
+
+    public static List<Villa> readVillaFromCSV() {
+        List<Villa> villaList = new ArrayList<>();
+        File file = new File(VILLA_DATA);
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+
+        try {
+            fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            String[] arr = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                arr = line.split(",");
+                Villa villa = new Villa(arr[0], Float.parseFloat(arr[1]),Float.parseFloat(arr[2]), Integer.parseInt(arr[3]), arr[4], arr[5], Float.parseFloat(arr[6]),  Integer.parseInt(arr[7]));
+                villaList.add(villa);
+            }
+            bufferedReader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return villaList;
+    }
+
+    public static List<Room> readRoomFromCSV() {
+        List<Room> roomList = new ArrayList<>();
+        File file = new File(ROOM_DATA);
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+
+        try {
+            fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            String[] arr = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                arr = line.split(",");
+                Room room = new Room(arr[0], Float.parseFloat(arr[1]),Float.parseFloat(arr[2]), Integer.parseInt(arr[3]), arr[4], arr[5]);
+                roomList.add(room);
+            }
+            bufferedReader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return roomList;
+    }
+
+    public static List<House> readHouseFromCSV() {
+        List<House> houseList = new ArrayList<>();
+        File file = new File(HOUSE_DATA);
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+
+        try {
+            fileReader = new FileReader(file);
+            bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            String[] arr = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                arr = line.split(",");
+                House house = new House(arr[0], Float.parseFloat(arr[1]),Float.parseFloat(arr[2]), Integer.parseInt(arr[3]), arr[4], arr[5], Integer.parseInt(arr[6]));
+                houseList.add(house);
+            }
+            bufferedReader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return houseList;
     }
 }

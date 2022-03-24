@@ -43,6 +43,7 @@ public class ProductManager {
                     productService.display();
                 case 6:
                     System.exit(6);
+
             }
         }
     }

@@ -47,7 +47,7 @@ public class EmployeeServiceImpl extends PersonServiceImpl implements EmployeeSe
         List<Employee> employeeList = ReadAndWrite.readEmployeeFromCSV();
         display();
         System.out.println("Choose employee to edit");
-        int choose = Integer.parseInt(scanner.nextLine());
+        int chooseEmployee = Integer.parseInt(scanner.nextLine());
         System.out.println("1. Edit name");
         System.out.println("2. Edit birthDay");
         System.out.println("3. Edit gender");
@@ -58,45 +58,57 @@ public class EmployeeServiceImpl extends PersonServiceImpl implements EmployeeSe
         System.out.println("8. Edit degree");
         System.out.println("9. Edit position");
         System.out.println("10. Edit salary");
+        System.out.println("which field do you want to edit?");
+        int choose = Integer.parseInt(scanner.nextLine());
         switch (choose) {
             case 1:
                 System.out.println("Enter new name");
                 String name = scanner.nextLine();
-                employeeList.get(choose - 1).setName(name);
+                employeeList.get(chooseEmployee - 1).setName(name);
+                break;
             case 2:
                 System.out.println("Enter new birthday");
                 String birthDay = scanner.nextLine();
-                employeeList.get(choose - 1).setBirthDay(birthDay);
+                employeeList.get(chooseEmployee - 1).setBirthDay(birthDay);
+                break;
             case 3:
                 System.out.println("Enter new gender");
                 String gender = scanner.nextLine();
-                employeeList.get(choose - 1).setGender(gender);
+                employeeList.get(chooseEmployee - 1).setGender(gender);
+                break;
             case 4:
                 System.out.println("Enter new id");
                 int id = Integer.parseInt(scanner.nextLine());
-                employeeList.get(choose - 1).setIdNumber(id);
+                employeeList.get(chooseEmployee - 1).setIdNumber(id);
+                break;
             case 5:
                 System.out.println("Enter new phone number");
                 String phone = scanner.nextLine();
-                employeeList.get(choose - 1).setPhoneNumber(phone);
+                employeeList.get(chooseEmployee - 1).setPhoneNumber(phone);
+                break;
             case 6:
                 System.out.println("Enter new email");
                 String email = scanner.nextLine();
-                employeeList.get(choose - 1).setEmail(email);
+                employeeList.get(chooseEmployee - 1).setEmail(email);
+                break;
             case 7:
                 System.out.println("Enter new employee id");
                 String employeeId = scanner.nextLine();
-                employeeList.get(choose - 1).setEmployeeId(employeeId);
+                employeeList.get(chooseEmployee - 1).setEmployeeId(employeeId);
+                break;
             case 8:
                 System.out.println("Enter new degree");
                 String degree = selectDegree();
+                break;
             case 9:
                 System.out.println("Enter new position");
                 String position = selectPosition();
+                break;
             case 10:
                 System.out.println("Enter new salary");
                 String salary = scanner.nextLine();
-                employeeList.get(choose - 1).setEmployeeId(salary);
+                employeeList.get(chooseEmployee - 1).setEmployeeId(salary);
+                break;
             default:
                 System.out.println("Choose a number");
         }

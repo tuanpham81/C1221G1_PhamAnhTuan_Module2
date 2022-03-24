@@ -2,7 +2,8 @@ package ss2_vong_lap.bai_tap.hien_thi_cac_loai_hinh;
 
 import java.util.Scanner;
 
-public class HienThiCacLoaiHinh {
+public class
+HienThiCacLoaiHinh {
     public static void main(String[] args) {
         int choice = -1;
         Scanner input = new Scanner(System.in);

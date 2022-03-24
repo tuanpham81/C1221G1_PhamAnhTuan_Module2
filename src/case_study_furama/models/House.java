@@ -1,6 +1,8 @@
 package case_study_furama.models;
 
-public class House extends Facility {
+import java.io.Serializable;
+
+public class House extends Facility{
     private String standard;
     private int floorNum;
 

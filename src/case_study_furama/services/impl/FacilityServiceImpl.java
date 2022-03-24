@@ -10,43 +10,27 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class FacilityServiceImpl implements FacilityService {
+public class FacilityServiceImpl implements FacilityService{
     static Scanner scanner = new Scanner(System.in);
     public static LinkedHashMap<Facility,Integer> facilityIntegerMap = new LinkedHashMap<>();
 
-    public static final String REGEX_VILLA = "(SVVL)[-][\\d]{4}";
-    public static final String REGEX_ROOM = "(SVRO)[-][\\d]{4}";
-    public static final String REGEX_HOUSE = "(SVHO)[-][\\d]{4}";
-    public static final String REGEX_STANDARD = "^[A-Z]+"; // sai
-
     static String[] rentTypeList = {"năm", "tháng", "ngày", "giờ"};
 
-    public float area;
-    public float price;
-    public int maxCapacity;
-    public String rentType;
 
-    @Override
-    public void addNew() {
-        float area = inputArea("Input area: ");
-        float price = inputPrice();
-        int maxCapacity = inputMaxCapacity();
-        String rentType = selectRentType();
-    }
 
     public static String inputVillaName(){
         System.out.println("Enter service name:");
-        return Regex.regexStr(scanner.nextLine(), REGEX_VILLA, "Mã dịch vụ phải đúng định dạng: SVXX-YYYY");
+        return Regex.regexStr(scanner.nextLine(), Regex.REGEX_VILLA, "Mã dịch vụ phải đúng định dạng: SVXX-YYYY");
     }
 
     public static String inputHouseName(){
         System.out.println("Enter service name:");
-        return Regex.regexStr(scanner.nextLine(), REGEX_HOUSE, "Mã dịch vụ phải đúng định dạng: SVXX-YYYY");
+        return Regex.regexStr(scanner.nextLine(), Regex.REGEX_HOUSE, "Mã dịch vụ phải đúng định dạng: SVXX-YYYY");
     }
 
     public static String inputRoomName(){
         System.out.println("Enter service name:");
-        return Regex.regexStr(scanner.nextLine(), REGEX_ROOM, "Mã dịch vụ phải đúng định dạng: SVXX-YYYY");
+        return Regex.regexStr(scanner.nextLine(), Regex.REGEX_ROOM, "Mã dịch vụ phải đúng định dạng: SVXX-YYYY");
     }
 
     public static float inputArea(String message){
@@ -79,7 +63,7 @@ public class FacilityServiceImpl implements FacilityService {
         return temp;
     }
 
-    private int inputMaxCapacity() {
+    public int inputMaxCapacity() {
         System.out.println("Enter max capacity :");
         int temp = Integer.parseInt(scanner.nextLine());
         boolean check = true;
@@ -96,7 +80,7 @@ public class FacilityServiceImpl implements FacilityService {
 
     public static String inputStandard() {
         System.out.println("Enter Standard:");
-        return Regex.regexStr(scanner.nextLine(), REGEX_STANDARD, "Phải viết hoa ký tự đầu, các ký tự sau là ký tự bình thường");
+        return Regex.regexStr(scanner.nextLine(), Regex.REGEX_STANDARD, "Phải viết hoa ký tự đầu, các ký tự sau là ký tự bình thường");
     }
 
     public static int inputFloor(){
@@ -121,20 +105,25 @@ public class FacilityServiceImpl implements FacilityService {
         }
         int choose;
         do{
-            choose = Integer.parseInt(scanner.nextLine());
-        } while (choose <= 0 || choose > rentTypeList.length + 1);
+            choose = Integer.parseInt(scanner.nextLine()) - 1;
+        } while (choose < 0 || choose > rentTypeList.length + 1);
         return rentTypeList[choose];
     }
 
 
     @Override
     public void display() {
-        LinkedHashMap<Facility, Integer> facilityIntegerLinkedHashMap = ReadAndWrite.readDataFromFile();
+        LinkedHashMap<Facility, Integer> facilityIntegerLinkedHashMap = ReadAndWrite.readFacilityFromFile();
         int i = 1;
         for (Map.Entry<Facility, Integer> facilityIntegerEntry : facilityIntegerLinkedHashMap.entrySet()) {
             System.out.println(i +". "+ facilityIntegerEntry.getKey() + " Number of uses:" + facilityIntegerEntry.getValue());
             i++;
         }
+    }
+
+    @Override
+    public void addNew() {
+
     }
 
     @Override

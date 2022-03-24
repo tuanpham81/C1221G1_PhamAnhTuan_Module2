@@ -3,11 +3,11 @@ package giai_thuat;
 import java.util.Scanner;
 
 public class Test2 {
-    public static void main(String[] args) {
-        String a;
-        do {
-            Scanner scanner = new Scanner(System.in);
-            a = scanner.nextLine();
-        } while (!a.equals("a"));
-    }
+        static {
+            System.out.println("Khoi static duoc trieu hoi");
+        }
+
+        public static void main(String args[]) {
+            System.out.println("Hello main");
+        }
 }

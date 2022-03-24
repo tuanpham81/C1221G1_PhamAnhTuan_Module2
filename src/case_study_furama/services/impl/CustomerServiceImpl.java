@@ -46,7 +46,7 @@ public class CustomerServiceImpl extends PersonServiceImpl implements CustomerSe
         List<Customer> customerList = ReadAndWrite.readCustomerFromCSV();
         display();
         System.out.println("Choose customer to edit");
-        int choose = Integer.parseInt(scanner.nextLine());
+        int chooseCustomer = Integer.parseInt(scanner.nextLine());
         System.out.println("1. Edit name");
         System.out.println("2. Edit birth day");
         System.out.println("3. Edit gender");
@@ -56,42 +56,44 @@ public class CustomerServiceImpl extends PersonServiceImpl implements CustomerSe
         System.out.println("7. Edit customer ID");
         System.out.println("8. Edit customer type");
         System.out.println("9. Edit address");
+        System.out.println("which field do you want to edit?");
+        int choose = Integer.parseInt(scanner.nextLine());
         switch (choose) {
             case 1:
                 System.out.println("Enter new name");
                 String name = scanner.nextLine();
-                customerList.get(choose - 1).setName(name);
+                customerList.get(chooseCustomer - 1).setName(name);
             case 2:
                 System.out.println("Enter new birthday");
                 String birthDay = scanner.nextLine();
-                customerList.get(choose - 1).setBirthDay(birthDay);
+                customerList.get(chooseCustomer - 1).setBirthDay(birthDay);
             case 3:
                 System.out.println("Enter new gender");
                 String gender = scanner.nextLine();
-                customerList.get(choose - 1).setGender(gender);
+                customerList.get(chooseCustomer - 1).setGender(gender);
             case 4:
                 System.out.println("Enter new id");
                 int id = Integer.parseInt(scanner.nextLine());
-                customerList.get(choose - 1).setIdNumber(id);
+                customerList.get(chooseCustomer - 1).setIdNumber(id);
             case 5:
                 System.out.println("Enter new phone number");
                 String phone = scanner.nextLine();
-                customerList.get(choose - 1).setPhoneNumber(phone);
+                customerList.get(chooseCustomer - 1).setPhoneNumber(phone);
             case 6:
                 System.out.println("Enter new email");
                 String email = scanner.nextLine();
-                customerList.get(choose - 1).setEmail(email);
+                customerList.get(chooseCustomer - 1).setEmail(email);
             case 7:
                 System.out.println("Enter new customer id");
                 String customerId = scanner.nextLine();
-                customerList.get(choose - 1).setCustomerId(customerId);
+                customerList.get(chooseCustomer - 1).setCustomerId(customerId);
             case 8:
                 System.out.println("Enter customer type");
                 String type = selectCustomerType();
             case 9:
                 System.out.println("Enter new address");
                 String address = scanner.nextLine();
-                customerList.get(choose - 1).setAddress(address);
+                customerList.get(chooseCustomer - 1).setAddress(address);
             default:
                 System.out.println("Choose a number");
         }

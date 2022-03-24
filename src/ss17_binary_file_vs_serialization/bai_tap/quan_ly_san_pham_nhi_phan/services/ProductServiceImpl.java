@@ -10,7 +10,7 @@ public class ProductServiceImpl {
     Scanner scanner = new Scanner(System.in);
     private static List<Product> products = new ArrayList<>();
 
-    private static final String PRODUCT_FILE_DAT = "src\\ss17_binary_file_vs_serialization\\bai_tap\\quan_ly_san_pham_nhi_phan\\product.txt";
+    private static final String PRODUCT_FILE_DAT = "src\\ss17_binary_file_vs_serialization\\bai_tap\\quan_ly_san_pham_nhi_phan\\data\\product.txt";
 
     public void add() {
         System.out.println("Nhập id sản phẩm: ");

@@ -1,9 +1,7 @@
 package case_study_furama.models;
 
 
-import java.io.Serializable;
-
-public class Villa extends Facility implements Serializable {
+public class Villa extends Facility{
         private String standard;
         private float  poolArea;
         private int floorNum;

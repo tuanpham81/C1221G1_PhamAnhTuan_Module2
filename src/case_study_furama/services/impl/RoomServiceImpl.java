@@ -4,9 +4,10 @@ import case_study_furama.models.Room;
 import case_study_furama.services.RoomService;
 import case_study_furama.utils.ReadAndWrite;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class RoomServiceImpl extends FacilityServiceImpl implements RoomService {
+public class RoomServiceImpl extends FacilityServiceImpl implements RoomService{
     static List<Room> roomList = new ArrayList<>();
 
     static {
@@ -16,14 +17,17 @@ public class RoomServiceImpl extends FacilityServiceImpl implements RoomService 
     @Override
     public void addNew() {
         String serviceName = FacilityServiceImpl.inputRoomName();
-        super.addNew();
+        float area = inputArea("Input area: ");
+        float price = inputPrice();
+        int maxCapacity = inputMaxCapacity();
+        String rentType = selectRentType();
         System.out.println("Enter free service:");
         String freeService = scanner.nextLine();
         System.out.println("Enter number of uses:");
         int numOfUse = Integer.parseInt(scanner.nextLine());
         Room room = new Room(serviceName,area,price,maxCapacity,rentType,freeService);
         facilityIntegerMap.put(room, numOfUse);
-        ReadAndWrite.writeToFile();
+        ReadAndWrite.writeFacilityToFile(false);
         roomList.add(room);
         ReadAndWrite.writeRoomListToCSV(roomList, false);
         System.out.println("Add new room successfully");

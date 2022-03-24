@@ -1,6 +1,8 @@
 package case_study_furama.models;
 
-public class Room extends Facility {
+import java.io.Serializable;
+
+public class Room extends Facility{
     private String freeService;
 
     public Room() {

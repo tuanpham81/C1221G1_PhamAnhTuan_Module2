@@ -1,8 +1,9 @@
 package case_study_furama.models;
 
+
 import java.io.Serializable;
 
-public abstract class Facility implements Serializable {
+public abstract class Facility implements Serializable{
     public String serviceName;
     public float area;
     public float price;

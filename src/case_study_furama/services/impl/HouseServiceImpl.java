@@ -11,21 +11,25 @@ public class HouseServiceImpl extends FacilityServiceImpl implements HouseServic
     static List<House> houseList = new ArrayList<>();
 
     static {
-        facilityIntegerMap.put(new House("house1",300,200,5,"full","double",1),4);
-        facilityIntegerMap.put(new House("house2",300,200,5,"full","single",2),3);
+        facilityIntegerMap.put(new House("house1", 300, 200, 5, "full", "double", 1), 4);
+        facilityIntegerMap.put(new House("house2", 300, 200, 5, "full", "single", 2), 3);
     }
+
     @Override
     public void addNew() {
         String serviceName = FacilityServiceImpl.inputHouseName();
-        super.addNew();
+        float area = inputArea("Input area: ");
+        float price = inputPrice();
+        int maxCapacity = inputMaxCapacity();
+        String rentType = selectRentType();
         String standard = FacilityServiceImpl.inputStandard();
         int floorNum = FacilityServiceImpl.inputFloor();
         System.out.println("Enter number of uses:");
         int numOfUse = Integer.parseInt(scanner.nextLine());
-        House house = new House(serviceName,area,price,maxCapacity,rentType,standard,floorNum);
+        House house = new House(serviceName, area, price, maxCapacity, rentType, standard, floorNum);
         facilityIntegerMap.put(house, numOfUse);
+        ReadAndWrite.writeFacilityToFile(false);
         houseList.add(house);
-        ReadAndWrite.writeToFile();
         ReadAndWrite.writeHouseListToCSV(houseList, false);
         System.out.println("Add new house successfully");
     }
